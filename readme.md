@@ -28,7 +28,7 @@ Put your SPA files into `./dist` directory and run
 $ docker build -t go-spa .
 ```
 
-This will build a very slim Docker image from `scratch` which includes only application built.
+This will build a very slim single-layered Docker image from `scratch` which includes only application built.
 
 ```sh
 $ docker run -p 8080:8080 go-spa
