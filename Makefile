@@ -1,6 +1,6 @@
 all: build
 
-build: statik main
+build: install_deps statik main
 
 main:
 	@CGO_ENABLED=0 go build -o ./build/app main.go
@@ -11,4 +11,7 @@ statik:
 install_deps:
 	@go get github.com/rakyll/statik
 
-.PHONY: build statik main install_deps
+docker:
+	@docker build -t go-spa .
+
+.PHONY: build statik main install_deps docker
