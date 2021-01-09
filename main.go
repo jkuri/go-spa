@@ -30,6 +30,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	log.Println("Starting server on http://localhost:8080")
 	http.Handle("/", http.FileServer(&index{statikFS}))
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
